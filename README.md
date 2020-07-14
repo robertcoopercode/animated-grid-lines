@@ -1,4 +1,4 @@
-![demo](./demo.gif)
+![demo](https://raw.githubusercontent.com/robertcoopercode/animated-grid-lines/master/demo.gif)
 
 # animated-grid-lines
 
@@ -42,7 +42,7 @@ The grid will take the full width and height of its parent.
 
 Change prop values | View available props
 --- | ---
-![Playground 1](./playground-1.png) | ![Playground 2](./playground-2.png)
+![Playground 1](https://raw.githubusercontent.com/robertcoopercode/animated-grid-lines/master/playground-1.png) | ![Playground 2](https://raw.githubusercontent.com/robertcoopercode/animated-grid-lines/master/playground-2.png)
 
 ---
 
