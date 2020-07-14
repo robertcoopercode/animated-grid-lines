@@ -2,6 +2,8 @@
 
 A react component that renders an interactive grid that of lines that shout out from a user's cursor on hover.
 
+![demo](./demo.gif)
+
 ## Installation
 
 ```
