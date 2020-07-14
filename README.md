@@ -40,13 +40,9 @@ The grid will take the full width and height of its parent.
 
 [This storybook playground](https://robertcoopercode.github.io/animated-grid-lines) is available to explore the component and try out different values for props.
 
-### Customizable props panel
-
-![Playground 1](./playground-1.png)
-
-### Props table
-
-![Playground 2](./playground-2.png)
+Change prop values | View available props
+--- | ---
+![Playground 1](./playground-1.png) | ![Playground 2](./playground-2.png)
 
 ---
 
