@@ -1,6 +1,6 @@
 animated-grid-lines
 
-[![NPM version][http://img.shields.io/npm/v/animated-grid-lines?style=for-the-badge&colorA=023e8a&colorB=00b4d8]][https://www.npmjs.com/package/animated-grid-lines]
+[![NPM version](http://img.shields.io/npm/v/animated-grid-lines?style=for-the-badge&colorA=023e8a&colorB=00b4d8)](https://www.npmjs.com/package/animated-grid-lines)
 
 A react component that renders an interactive grid that of lines that shout out from a user's cursor on hover.
 
