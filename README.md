@@ -23,6 +23,8 @@ import Grid from 'animated-grid-lines';
 <Grid />
 ```
 
+The grid will take the full width and height of its parent.
+
 ## Props
 
 [See playground](https://robertcoopercode.github.io/animated-grid-lines) for available props.

@@ -1,4 +1,4 @@
-import throttle from './throttle';
+import { throttle } from './throttle';
 
 type Direction = 'up' | 'down' | 'left' | 'right';
 type Line = {
@@ -7,14 +7,6 @@ type Line = {
   currentColor: string;
   coordinates: [number, number][];
 };
-
-const allowedDirections: { [key in Direction]: Direction[] } = {
-  up: ['up', 'left', 'right'],
-  down: ['down', 'left', 'right'],
-  left: ['left', 'up', 'down'],
-  right: ['right', 'up', 'down'],
-};
-
 type Config = {
   colors: string[];
   speed: number;
@@ -24,7 +16,14 @@ type Config = {
   gridColor: string;
 };
 
-class GridRenderer {
+const allowedDirections: { [key in Direction]: Direction[] } = {
+  up: ['up', 'left', 'right'],
+  down: ['down', 'left', 'right'],
+  left: ['left', 'up', 'down'],
+  right: ['right', 'up', 'down'],
+};
+
+export class GridRenderer {
   canvas: HTMLCanvasElement;
   context: CanvasRenderingContext2D;
   pixelRatio: number;
@@ -69,12 +68,15 @@ class GridRenderer {
       Math.floor(Math.random() * availableDirections.length)
     ];
   }
+
   pickLineColor(): string {
     return this.lineColors[Math.floor(Math.random() * this.lineColors.length)];
   }
+
   getSquareLength(): number {
     return this.squareSize * this.pixelRatio;
   }
+
   getClosestIntersectionCoordinates(event: MouseEvent): [number, number] {
     const squareLength = this.getSquareLength();
     const x =
@@ -177,6 +179,7 @@ class GridRenderer {
         return;
     }
   }
+
   shootLine(): void {
     for (const [line, index] of this.lines.map<[Line, number]>(
       (line, index) => [line, index]
@@ -207,19 +210,6 @@ class GridRenderer {
       ) {
         this.lines.splice(index, 1);
       }
-    }
-  }
-
-  register(): void {
-    this.registeredCallback = throttle(this.onMouseOver.bind(this), 20);
-    this.canvas.addEventListener('mousemove', this.registeredCallback);
-    this.draw();
-  }
-
-  unregister(): void {
-    if (this.registeredCallback !== undefined) {
-      this.canvas.removeEventListener('mousemove', this.registeredCallback);
-      this.registeredCallback = undefined;
     }
   }
 
@@ -263,6 +253,17 @@ class GridRenderer {
       currentDirection: direction,
     });
   }
-}
 
-export default GridRenderer;
+  register(): void {
+    this.registeredCallback = throttle(this.onMouseOver.bind(this), 20);
+    this.canvas.addEventListener('mousemove', this.registeredCallback);
+    this.draw();
+  }
+
+  unregister(): void {
+    if (this.registeredCallback !== undefined) {
+      this.canvas.removeEventListener('mousemove', this.registeredCallback);
+      this.registeredCallback = undefined;
+    }
+  }
+}

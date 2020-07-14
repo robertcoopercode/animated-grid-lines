@@ -1,4 +1,4 @@
-const throttle = (
+export const throttle = (
   callback: (e: MouseEvent) => void,
   delay: number
 ): ((e: MouseEvent) => void) => {
@@ -27,5 +27,3 @@ const throttle = (
 
   return throttledEventHandler;
 };
-
-export default throttle;

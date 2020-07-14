@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, HTMLAttributes, FC } from 'react';
-import GridRenderer from './GridRenderer';
+import { GridRenderer } from './GridRenderer';
 
 export type StorybookProps = {
   /** Colors used for the lines. */
@@ -79,5 +79,3 @@ export const Grid: FC<Props> = ({
 
   return <canvas ref={canvasRef} {...rest}></canvas>;
 };
-
-export default Grid;
