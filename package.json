@@ -17,7 +17,8 @@
     "lint": "eslint '**/*.{ts,tsx}' --quiet",
     "prepare": "tsdx build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -45,6 +46,7 @@
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
