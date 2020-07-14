@@ -2,7 +2,7 @@
 
 # animated-grid-lines
 
-[![NPM version](http://img.shields.io/npm/v/animated-grid-lines?style=for-the-badge&colorA=023e8a&colorB=00b4d8)](https://www.npmjs.com/package/animated-grid-lines)
+[![NPM version](http://img.shields.io/npm/v/animated-grid-lines?style=for-the-badge&colorA=023e8a&colorB=00b4d8)](https://www.npmjs.com/package/animated-grid-lines) [![Bundle size](https://img.shields.io/bundlephobia/minzip/animated-grid-lines?style=for-the-badge&colorA=023e8a&colorB=00b4d8)](https://bundlephobia.com/result?p=animated-grid-lines)
 
 A react component that renders an interactive grid with lines that shoot out from a user's cursor on hover.
 
