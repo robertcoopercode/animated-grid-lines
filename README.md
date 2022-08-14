@@ -6,6 +6,9 @@
 
 A react component that renders an interactive grid with lines that shoot out from a user's cursor on hover.
 
+> Please give this repo a ⭐️ if you find it useful or interesting.
+
+
 ## Installation
 
 ```bash
@@ -44,6 +47,10 @@ Change prop values | View available props
 --- | ---
 ![Playground 1](https://raw.githubusercontent.com/robertcoopercode/animated-grid-lines/master/playground-1.png) | ![Playground 2](https://raw.githubusercontent.com/robertcoopercode/animated-grid-lines/master/playground-2.png)
 
----
+## Publish to NPM
 
-Please give this repo a ⭐️ if you find it useful or interesting.
+Use `np` to publish to NPM.
+
+```bash
+npx np
+```
