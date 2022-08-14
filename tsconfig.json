@@ -13,6 +13,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
+    "downlevelIteration": true,
     "baseUrl": "./",
     "paths": {
       "@": ["./"],

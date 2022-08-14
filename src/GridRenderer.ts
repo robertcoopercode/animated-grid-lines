@@ -88,14 +88,16 @@ export class GridRenderer {
 
   limitLineLength(line: Line): void {
     function calculateSum(): number {
-      return line.coordinates.reduce((acc, [x, y], index, arr) => {
+      return line.coordinates.reduce((acc, [x2, y2], index, arr) => {
         if (index === 0) {
           return acc;
         }
-        acc += Math.sqrt(
-          Math.pow(x - arr[index - 1][0], 2) +
-            Math.pow(y - arr[index - 1][1], 2)
-        );
+        const [x1, y1] = arr[index - 1];
+        if (x1 === x2) {
+          acc += Math.abs(y1 - y2);
+        } else if (y1 === y2) {
+          acc += Math.abs(x1 - x2);
+        }
         return acc;
       }, 0);
     }
@@ -202,11 +204,15 @@ export class GridRenderer {
       const lastCoord = lineCoords[lineCoords.length - 1];
       const xPos = lastCoord[0];
       const yPos = lastCoord[1];
+      // Factor in the max line length so that the line doesn't disappear when
+      // it hits any edge of the canvas. Basically, we artificially extend the
+      // canvas so that the line can continue to be drawn until it is completely
+      // off the visible canvas.
       if (
-        xPos >= this.canvas.width ||
-        xPos <= 0 ||
-        yPos >= this.canvas.height ||
-        yPos <= 0
+        xPos >= this.canvas.width + this.maxLineLength ||
+        xPos <= -this.maxLineLength ||
+        yPos >= this.canvas.height + this.maxLineLength ||
+        yPos <= -this.maxLineLength
       ) {
         this.lines.splice(index, 1);
       }

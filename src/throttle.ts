@@ -10,18 +10,26 @@ export const throttle = (
 
     const shouldHandleEvent = !throttleTimeout;
 
+    console.log('Event', event.offsetX);
     if (shouldHandleEvent) {
       callback(storedEvent);
 
       storedEvent = null;
 
-      throttleTimeout = window.setTimeout(() => {
+      const throttled = function () {
         throttleTimeout = null;
 
         if (storedEvent) {
+          console.log(
+            'Calling with stored event',
+            storedEvent.offsetX,
+            event.offsetX
+          );
           throttledEventHandler(storedEvent);
         }
-      }, delay);
+      };
+
+      throttleTimeout = window.setTimeout(throttled, delay);
     }
   };
 
